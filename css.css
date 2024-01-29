@@ -1,0 +1,149 @@
+body {
+    font-family: 'EB Garamond', sans-serif;
+    background-color: #b6bebd;
+
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+
+    background-color: black;
+    color: #b6bebd ;
+    font-size: 2vh;
+    
+    padding: 3vh;
+
+    -webkit-box-shadow: 0px 7px 25px 9px rgba(0,0,0,0.19);
+    -moz-box-shadow: 0px 7px 25px 9px rgba(0,0,0,0.19);
+    box-shadow: 0px 7px 25px 9px rgba(0,0,0,0.19);
+}
+.header > h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    padding: 3vw;
+}
+
+.add {
+    height: 11vw;
+    width: 11vw;
+    font-size: 4vw;
+    background-color: rgba(117, 155, 139, 0.5);
+    
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 0;
+}
+
+.add:hover {
+    background-color: white;
+}
+
+/************************************/
+
+dialog {
+    border-radius: 8px;
+    width: 15vw;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+dialog > form {
+    display: flex;
+    flex-direction: column;
+
+}
+
+dialog > form > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+}
+
+dialog > form > label {
+    margin-right: 0;
+}
+
+form > button {
+    align-self: center;
+    background-color: #b6bebd;
+    border: 1px solid black;
+    border-radius: 8px;
+
+    height: 4vh;
+    width: 8vw;
+    font-size: 2vh;
+
+    -webkit-box-shadow: 0px 0px 33px 9px rgba(0,0,0,0.17);
+    -moz-box-shadow: 0px 0px 33px 9px rgba(0,0,0,0.17);
+    box-shadow: 0px 0px 33px 9px rgba(0,0,0,0.17);
+
+}
+
+/************************************/
+
+.content {
+    display: flex;
+    align-items: center;
+    flex-wrap: flex;
+    flex: 1 1 0;
+
+}
+
+.content > div * {
+    margin: 0;
+    padding: 0;
+
+}
+
+.content > div {
+    border: 1px solid black;
+    border-radius: 8px;
+    margin: 3vw;
+
+    height:9vw;
+    width: 15vw;
+
+    padding: 1vw;
+
+    background-color: #cac4b8;
+
+    display: flex;
+    flex-direction: column;
+
+    -webkit-box-shadow: 0px 0px 33px 9px rgba(0,0,0,0.17);
+    -moz-box-shadow: 0px 0px 33px 9px rgba(0,0,0,0.17);
+    box-shadow: 0px 0px 33px 9px rgba(0,0,0,0.10);
+
+}
+
+.content > div > div {
+    font-size: 1.7vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content > div > div > button {        
+    height: 2vw;
+    
+    border: 1px solid black;
+    border-radius: 4px;
+
+    margin-top: 1vh;
+    padding: 1vh 1vw;
+}
+
+.content > div > div > button:hover {
+    background-color:#e7d4d4;
+}
+
+.book {
+    display: on;
+}
