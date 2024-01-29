@@ -43,6 +43,8 @@ add.addEventListener('click', function(){
         createNewBook(newBook)
 
         console.log(newBook)
+
+        
     }
 
     
@@ -71,10 +73,43 @@ function createNewBook(book = null){
             newStatus = newBook.querySelector('.newStatus')
             newStatus.checked = true;
         }
+
+        const edit = newBook.querySelector('.edit')
+        edit.addEventListener('click', function(){
+            dialog.showModal()
+            // filling out modal
+            
+            // adding new book
+            
+            // remove the old one
+        })
         
     }
-}
 
-for(let i=0; i<library.length; i++)
+    const remo = newBook.querySelector('.remove')
+    remo.addEventListener('click', function(){
+        remo.parentNode.parentNode.remove()
+    })
+
+    const edit = newBook.querySelector('.edit')
+    edit.addEventListener('click', function(){
+        dialog.showModal()
+
+        // filling out modal
+        const title  =   document.querySelector('#title')
+        const author =   document.querySelector('#author')
+        const pages  =   document.querySelector('#pages')
+        const read   =   document.querySelector('#read')
+        
+        title.innerHTML = `${book.title}`
+        // adding new book
+        
+        // remove the old one
+    })
+
+}
+    
+for(let i=0; i<library.length; i++){
     createNewBook(library[i])
+}
 
