@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="prototypes.js" defer></script>
     <title>Library</title>
-    <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
     <link href="css.css" rel="stylesheet">
+    <link href="favicon.svg" rel="icon" type="image">
 </head>
 <body>
     <div class="header">
@@ -39,30 +39,31 @@
 
 
 
-                <button type="submit">add a book</button>
+                <button type="submit" >add a book</button>
             </form>
         </dialog>
+
         <button class="add">+</button>
 
         <div class="book">
             <div>
                 <h3>Title:</h3>
-                <p>The Hobbit</p>
+                <p class="newTitle"></p>
             </div>
             
             <div>
                 <h3>Author:</h3>
-                <p></p>
+                <p class="newAuthor"></p>
             </div>
 
             <div>
                 <h3>Pages:</h3>
-                <p></p>
+                <p class="newPages"></p>
             </div>
 
             <div>
-                <h3>Read:</h3>
-                <input type="checkbox">
+                <h3>Finished:</h3>
+                <input class="newStatus" type="checkbox">
             </div>
             
             <div style="justify-content: center;">

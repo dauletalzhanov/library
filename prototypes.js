@@ -36,35 +36,45 @@ add.addEventListener('click', function(){
 
     if(title.value != '' && author.value != '' && pages.value != ''){
         let newBook = new Book(title.value, author.value, pages.value)
-        if(read.value){
+        if(read.checked){
             newBook.toggleStatus()
         }
 
-        addEntry(newBook)
+        createNewBook(newBook)
 
         console.log(newBook)
-
-
     }
 
     
 })
 
-function addEntry(book){
-    const newDiv = document.createElement('div')
-    newDiv.style = 'border: 1px solid black; border-radius: 8px; width: 10vw; display: flex; flex-direction:column;'
+//////////////////////////////////////////////////////////////
+
+function createNewBook(book = null){
+    aBook = document.querySelector('.book')
+    newBook = aBook.cloneNode(true)
     
-    const newTitle = document.createElement('div')
-    const newH3 = document.createElement('h3')
-    newH3.appendChild(document.createTextNode(`Title: ${book.title}`))
-    newTitle.appendChild(newH3)
-    newDiv.appendChild(newTitle)
+    newBook.style = "display: flex"
+    content.appendChild(newBook)
 
-    const newAuthor = document.createElement('div')
-    const newH3Au = document.createElement('h3')
-    newH3Au.appendChild(document.createTextNode(`Author: ${book.author}`))
-    newAuthor.appendChild(newH3Au)
-    newDiv.appendChild(newAuthor)
+    if(book != null){
+        newTitle = newBook.querySelector('.newTitle')
+        newTitle.innerHTML = `${book.title}`
+        
+        newAuthor = newBook.querySelector('.newAuthor')
+        newAuthor.innerHTML = `${book.author}`
 
-    content.appendChild(newDiv)
+        newPages = newBook.querySelector('.newPages')
+        newPages.innerHTML = `${book.pages}`
+
+        if(book.status){
+            newStatus = newBook.querySelector('.newStatus')
+            newStatus.checked = true;
+        }
+        
+    }
 }
+
+for(let i=0; i<library.length; i++)
+    createNewBook(library[i])
+
