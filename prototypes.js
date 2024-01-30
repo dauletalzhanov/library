@@ -73,16 +73,6 @@ function createNewBook(book = null){
             newStatus = newBook.querySelector('.newStatus')
             newStatus.checked = true;
         }
-
-        const edit = newBook.querySelector('.edit')
-        edit.addEventListener('click', function(){
-            dialog.showModal()
-            // filling out modal
-            
-            // adding new book
-            
-            // remove the old one
-        })
         
     }
 
@@ -93,19 +83,41 @@ function createNewBook(book = null){
 
     const edit = newBook.querySelector('.edit')
     edit.addEventListener('click', function(){
-        dialog.showModal()
+        if(this.innerHTML == 'Edit'){
+            this.innerHTML = "Update"
 
-        // filling out modal
-        const title  =   document.querySelector('#title')
-        const author =   document.querySelector('#author')
-        const pages  =   document.querySelector('#pages')
-        const read   =   document.querySelector('#read')
-        
-        title.innerHTML = `${book.title}`
-        // adding new book
-        
-        // remove the old one
+            let updatedBook = this.parentNode.parentNode
+            newTitle = updatedBook.querySelector('.newTitle')
+            newAuthor = updatedBook.querySelector('.newAuthor')
+            newPages = updatedBook.querySelector('.newPages')
+            
+            
+            newTitle.innerHTML  =  `<input type='text' value='${book.title}'>`
+            newAuthor.innerHTML =  `<input type='text' value='${book.author}'>`
+            newPages.innerHTML  =  `<input type='number' min=0 value='${book.pages}'>`
+        }
+            
+        else{
+            edit.innerHTML = 'Edit'
+
+            let updatedBook = this.parentNode.parentNode
+            newTitle = updatedBook.querySelector('.newTitle > input')
+            newAuthor = updatedBook.querySelector('.newAuthor > input')
+            newPages = updatedBook.querySelector('.newPages > input')
+            
+            updatedTitle = newTitle.value
+            updatedAuthor = newAuthor.value
+            updatedPages = newPages.value
+            
+            newTitle.parentNode.innerHTML  =  `${updatedTitle}`
+            newAuthor.parentNode.innerHTML =  `${updatedAuthor}`
+            newPages.parentNode.innerHTML  =  `${updatedPages}`
+
+            
+        }
     })
+
+    
 
 }
     
